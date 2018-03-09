@@ -11,3 +11,18 @@ npm install webpack-dev-server -g
 React:
 npm install --save react
 npm install --save react-dom
+
+/*
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+*/
+
+//Passes name="Sara" as props or more accurately props.name = "Sara"
