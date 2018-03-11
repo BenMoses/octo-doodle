@@ -12,6 +12,15 @@ class Background extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    style(){
+        return {
+        backgroundImage : "url(./src/images/"+this.state.currentStory.location+")",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center 80%",
+        backgroundSize: "cover"
+        }
+    }
+
     componentDidMount(){
         this.setState(prevState =>({
             i: 0,
@@ -28,19 +37,14 @@ class Background extends React.Component {
     }
 
     render(){
-        return <img onClick={this.handleClick}
-        src = {'./src/images/'+this.state.currentStory.location}
-        position ='absolute'
-        left ='0'
-        top ='0'
-        width = '100%'
-        height = '100%'
-        margin = '0'
-        padding = '0'
-        overflow = 'hidden'
-        object-fit = 'cover'
+        return <div 
+        onClick = {this.handleClick}
+        id = 'background'
+        style= {this.style()}
         />
     }
 }
 
-ReactDOM.render(<Background />,document.getElementById('background'))
+
+
+ReactDOM.render(<Background />,document.getElementById('app'))
