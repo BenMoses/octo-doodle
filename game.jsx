@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import StoryModule from './src/story.js';
 
-class Background extends React.Component {
+class Game extends React.Component {
     constructor(props){
         super(props);
         this.story = StoryModule;
@@ -12,12 +12,18 @@ class Background extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    style(){
+    backgroundStyle(){
         return {
         backgroundImage : "url(./src/images/"+this.state.currentStory.location+")",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center 80%",
         backgroundSize: "cover"
+        }
+    }
+
+    leftCharacterStyle(){
+        return {
+
         }
     }
 
@@ -37,14 +43,20 @@ class Background extends React.Component {
     }
 
     render(){
-        return <div 
+        return <div id="container">
+        <div id = 'game'
         onClick = {this.handleClick}
-        id = 'background'
-        style= {this.style()}
+        style= {this.backgroundStyle()}
         />
+        <img id="leftCharacter"
+        />
+        <img id="rightCharacter"
+        />
+        </div>
+        
     }
 }
 
 
 
-ReactDOM.render(<Background />,document.getElementById('app'))
+ReactDOM.render(<Game />,document.getElementById('app'))

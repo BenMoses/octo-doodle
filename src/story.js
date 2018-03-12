@@ -1,8 +1,8 @@
 module.exports = [
 {
     location:'park-background.jpg',
-    leftCharacter:'beth',
-    rightCharacter:'ryan',
+    leftCharacter:'',
+    rightCharacter:'',
     monologue:'Lorem Ipsum Galore...',
     leftComment:"My name is beth",
     rightComment:"My name's ryan!"
@@ -10,6 +10,14 @@ module.exports = [
 },{
     location:'school-background.jpg',
     leftCharacter:'beth',
+    rightCharacter:'',
+    monologue:'Lorem Ipsum Galore...',
+    leftComment:"My name is beth",
+    rightComment:"My name's ryan!"
+    //UI...
+},{
+    location:'mall-background.jpg',
+    leftCharacter:'',
     rightCharacter:'ryan',
     monologue:'Lorem Ipsum Galore...',
     leftComment:"My name is beth",
@@ -25,16 +33,8 @@ module.exports = [
     //UI...
 },{
     location:'mall-background.jpg',
-    leftCharacter:'beth',
-    rightCharacter:'ryan',
-    monologue:'Lorem Ipsum Galore...',
-    leftComment:"My name is beth",
-    rightComment:"My name's ryan!"
-    //UI...
-},{
-    location:'mall-background.jpg',
-    leftCharacter:'beth',
-    rightCharacter:'ryan',
+    leftCharacter:'',
+    rightCharacter:'',
     monologue:'Lorem Ipsum Galore...',
     leftComment:"My name is beth",
     rightComment:"My name's ryan!"
