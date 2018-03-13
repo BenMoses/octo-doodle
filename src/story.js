@@ -1,8 +1,8 @@
 module.exports = [
 {
     location:'park-background.jpg',
-    leftCharacter:'',
-    rightCharacter:'',
+    leftCharacter:'beth',
+    rightCharacter:'ryan',
     monologue:'Lorem Ipsum Galore...',
     leftComment:"My name is beth",
     rightComment:"My name's ryan!"
