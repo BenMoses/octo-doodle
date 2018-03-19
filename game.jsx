@@ -113,6 +113,20 @@ class Game extends React.Component {
         return comments
     }
 
+    generateUI(){
+        let ui = {};
+
+        ui.home =   <div id="home">
+                    <i className="fa fa-home"></i>
+                    </div>
+
+        ui.character =   <div id="character">
+                    <i className="fa fa-user"></i>
+                    </div>
+
+        return ui;
+    }
+
 
 //////Renderer
     render(){
@@ -143,7 +157,7 @@ class Game extends React.Component {
         if(current.monologue != '' && current.monologue != null && current.monologue != undefined){
             monologue = comments.monologue;
         }
-
+        let UI = this.generateUI();
         return  <div id="container"
                 onClick = {this.handleClick}>
                     <div id = 'game'
@@ -154,6 +168,8 @@ class Game extends React.Component {
                     {leftComments}
                     {rightComments}
                     {monologue}
+                    {UI.home}
+                    {UI.character}
                 </div>
         
     }

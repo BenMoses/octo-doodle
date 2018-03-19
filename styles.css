@@ -105,3 +105,21 @@ p {
   text-align: center;
   
 }
+
+#home {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+#character {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+}
+i {
+  color:white;
+  padding:12px;  
+  background-color: blue;
+  font-size: 32px !important;
+  cursor: pointer;
+}
