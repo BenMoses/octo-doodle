@@ -80,26 +80,34 @@ class Game extends React.Component {
     generateComments(){
         let comments = {left: {}, right: {}, monologue: {}};
         let current = this.state.currentStory;
-        let pos = {position:"absolute"};
+        let xOffset = (this.calculateCharacterPosition()/2)
+        let yOffset = (window.innerHeight * 0.7) *0.8;
         if(current.leftComment != '' && current.leftComment != null && current.leftComment != undefined){
             comments.left = 
-            <svg height="30" width="200" style={pos}>
-                <text x="0" y="15" fill="red">{this.state.currentStory.leftComment}</text>
-            </svg>
+            <div className="leftComment" style={{backgroundColor: this.state.currentStory.leftEmotion, borderColor: this.state.currentStory.leftEmotion, left: xOffset, bottom: yOffset}}>
+                <p>
+                {this.state.currentStory.leftComment}
+                </p>
+            </div>
+            
         }
 
         if(current.rightComment != '' && current.rightComment != null && current.rightComment != undefined){
             comments.right = 
-            <svg height="30" width="200" style={pos}>
-                <text x="0" y="15" fill="red">{this.state.currentStory.rightComment}</text>
-            </svg>
+            <div className="rightComment" style={{backgroundColor: this.state.currentStory.rightEmotion, borderColor: this.state.currentStory.rightEmotion, right: xOffset, bottom: yOffset}}>
+                <p>
+                {this.state.currentStory.rightComment}
+                </p>
+            </div>
         }
 
         if(current.monologue != '' && current.monologue != null && current.monologue != undefined){
             comments.monologue = 
-            <svg height="30" width="200" style={pos}>
-                <text x="0" y="15" fill="red">{this.state.currentStory.monologue}</text>
-            </svg>
+            <div className="monologue">
+                <p>
+                {this.state.currentStory.monologue}
+                </p>
+            </div>
         }
 
         return comments

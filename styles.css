@@ -1,3 +1,12 @@
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome and Opera */
+}
 body {
     position:absolute;
     width:100%;
@@ -37,4 +46,62 @@ body {
     margin:0;
     overflow:hidden;
        
+}
+
+
+.leftComment {
+  position: absolute;
+  width: 250px;
+}
+.leftComment:after {
+  top: 100%;
+  left: 5%;
+  border: solid transparent;
+  content: " ";
+  position: absolute;
+  border-color: inherit;
+  border-bottom-color:  rgba(255, 255, 255, 0);
+  border-right-color:  rgba(255, 255, 255, 0);
+  border-width: 15px;
+}
+p {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: Open Sans;
+  font-size: 0.9em;
+  color: white;  
+}
+
+
+
+.rightComment {
+  position: absolute;
+  width: 250px;
+}
+.rightComment:after {
+	top: 100%;
+	left: 208.5px;
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	border-color: inherit;
+	border-bottom-color: rgba(255, 255, 255, 0);
+	border-left-color:  rgba(255, 255, 255, 0);
+	border-width: 15px;
+}
+
+.monologue {
+  position: absolute;
+  bottom: 20px;
+  left: 5vw;
+  width: 90vw;
+  background: white;
+  border: #26a8de;
+  border-style: solid;
+}
+.monologue p{
+  color:black;
+  text-align: center;
+  
 }
