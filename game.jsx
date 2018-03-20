@@ -5,7 +5,7 @@ import StoryModule from './src/story.js';
 class Game extends React.Component {
     constructor(props){
         super(props);
-        this.story = StoryModule;
+        this.story = StoryModule; //props.story
         
         
         this.state = {i: 0, currentStory : this.story[0]};
@@ -77,6 +77,14 @@ class Game extends React.Component {
         }))
     }
 
+    homeButton(){
+        console.log('Home')
+    }
+
+    characterButton(){
+        console.log('Character')
+    }
+
     generateComments(){
         let comments = {left: {}, right: {}, monologue: {}};
         let current = this.state.currentStory;
@@ -84,7 +92,7 @@ class Game extends React.Component {
         let yOffset = (window.innerHeight * 0.7) *0.8;
         if(current.leftComment != '' && current.leftComment != null && current.leftComment != undefined){
             comments.left = 
-            <div className="leftComment" style={{backgroundColor: this.state.currentStory.leftEmotion, borderColor: this.state.currentStory.leftEmotion, left: xOffset, bottom: yOffset}}>
+            <div className="leftComment" onClick = {this.handleClick} style={{backgroundColor: this.state.currentStory.leftEmotion, borderColor: this.state.currentStory.leftEmotion, left: xOffset, bottom: yOffset}}>
                 <p>
                 {this.state.currentStory.leftComment}
                 </p>
@@ -94,7 +102,7 @@ class Game extends React.Component {
 
         if(current.rightComment != '' && current.rightComment != null && current.rightComment != undefined){
             comments.right = 
-            <div className="rightComment" style={{backgroundColor: this.state.currentStory.rightEmotion, borderColor: this.state.currentStory.rightEmotion, right: xOffset, bottom: yOffset}}>
+            <div className="rightComment" onClick = {this.handleClick} style={{backgroundColor: this.state.currentStory.rightEmotion, borderColor: this.state.currentStory.rightEmotion, right: xOffset, bottom: yOffset}}>
                 <p>
                 {this.state.currentStory.rightComment}
                 </p>
@@ -103,7 +111,7 @@ class Game extends React.Component {
 
         if(current.monologue != '' && current.monologue != null && current.monologue != undefined){
             comments.monologue = 
-            <div className="monologue">
+            <div className="monologue" onClick = {this.handleClick}>
                 <p>
                 {this.state.currentStory.monologue}
                 </p>
@@ -117,13 +125,12 @@ class Game extends React.Component {
         let ui = {};
 
         ui.home =   <div id="home">
-                    <i className="fa fa-home"></i>
+                    <i className="fa fa-home" onClick={this.homeButton}></i>
                     </div>
 
         ui.character =   <div id="character">
-                    <i className="fa fa-user"></i>
+                    <i className="fa fa-user" onClick={this.characterButton}></i>       
                     </div>
-
         return ui;
     }
 
@@ -133,7 +140,7 @@ class Game extends React.Component {
         let left, right, leftComments, rightComments, monologue;
         let current = this.state.currentStory;
         if(current.leftCharacter != '' && current.leftCharacter != null && current.leftCharacter != undefined){
-            left =  <img id="leftCharacter"
+            left =  <img id="leftCharacter" onClick = {this.handleClick}
                     src={'./src/images/'+this.state.currentStory.leftCharacter+'.png'}
                     style= {this.leftCharacterStyle()}
                     />
@@ -141,7 +148,7 @@ class Game extends React.Component {
 
         
         if(current.rightCharacter != '' && current.rightCharacter != null && current.rightCharacter != undefined){
-            right =  <img id="rightCharacter"
+            right =  <img id="rightCharacter" onClick = {this.handleClick}
                     src={'./src/images/'+this.state.currentStory.rightCharacter+'.png'}
                     style= {this.rightCharacterStyle()}
                     />
@@ -158,9 +165,8 @@ class Game extends React.Component {
             monologue = comments.monologue;
         }
         let UI = this.generateUI();
-        return  <div id="container"
-                onClick = {this.handleClick}>
-                    <div id = 'game'
+        return  <div id="container">
+                    <div id = 'game' onClick = {this.handleClick}
                         style= {this.backgroundStyle()}
                     />
                     {left}
