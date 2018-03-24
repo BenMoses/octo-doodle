@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StoryModule from './src/story.js';
 
 module.exports = class Game extends React.Component {
     constructor(props){
         super(props);
-        this.story = StoryModule; //props.story
+        this.story = props.storyline; //props.story
         
         
         this.state = {i: 0, currentStory : this.story[0]};

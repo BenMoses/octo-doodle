@@ -4,14 +4,12 @@ module.exports = class CharacterButton extends React.Component {
     constructor(props){
         super(props);
 
-        this.state={};
     }
-    
 
 //////Renderer
     render(){
-        let cornerButtonsStyle;
-
+        let cornerButtonsStyle = {display:"block"}
+/*
         if(this.props.visible == true){
             cornerButtonsStyle =    {
                                         display:"block"
@@ -21,7 +19,7 @@ module.exports = class CharacterButton extends React.Component {
                                         display:"none"
                                     }
         }
-
+*/
 
         return  <div id="character" style={cornerButtonsStyle}>
                     <i className="fa fa-user" onClick={this.props.action}></i>       
