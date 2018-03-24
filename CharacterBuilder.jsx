@@ -12,7 +12,7 @@ module.exports = class CharacterBuilder extends React.Component {
     render(){
         let mainMenuStyle = {
             display:"block",
-            backgroundColor:"green",
+            backgroundColor:"#edb17f",
             textAlign:"center"
         }
 

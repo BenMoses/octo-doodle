@@ -13,13 +13,15 @@ module.exports = class MainMenu extends React.Component{
         
         mainMenuStyle = {
             display:"block",
-            backgroundColor:"black",
+            background:"radial-gradient(at 50% 50%,#edb17f,#edb17f)",
             textAlign:"center"
         }
 
         return  <div className="MENU" style={mainMenuStyle}>
-                    <p><b>This is your menu</b></p>
-                    <p onClick={this.props.action} style={{cursor:"pointer"}}>Close the menu</p>
+                    <h3 onClick={this.props.closeMenu} style={{cursor:"pointer"}}>Rejoin Game</h3>
+                    <h3 onClick={this.props.openCharacterCreator} style={{cursor:"pointer"}}>Character Creation</h3>
+                    <h3 onClick={this.props.openSettings} style={{cursor:"pointer"}}>Settings</h3>
+                    <h3 onClick={e =>{alert('I told you it wouldn\'t work, You cannot leave!')}} style={{cursor:"pointer", fontSize:"13px"}}>Close App (won't work on browsers)</h3>
                 </div>
     }
 }

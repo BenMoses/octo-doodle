@@ -116,3 +116,18 @@ i {
   font-size: 32px !important;
   cursor: pointer;
 }
+
+h3 {
+  font-family: open sans;
+  background-color: #36c6ec;
+  padding: 16px;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%;
+  color:white;
+  font-weight: 400;
+  font-size:18px;
+}

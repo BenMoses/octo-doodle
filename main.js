@@ -8,6 +8,7 @@ import StoryModule from './src/story.js';
 import CharacterBuilder from './CharacterBuilder.jsx';
 import CharacterButton from './CharacterButton.jsx';
 import MainMenu from './MainMenu.jsx';
+import Settings from './Settings.jsx';
 import MainMenuButton from './MainMenuButton.jsx';
 import Game from './game.jsx';
 
@@ -17,17 +18,19 @@ class Container extends React.Component{
         super(props);
 
 
-        this.state = {storyline: StoryModule, gameInit: true, characterCreator:false, mainMenu:true};
+        this.state = {storyline: StoryModule, gameInit: true, characterCreator:false, mainMenu:true, settings:false};
 
         this.openCharacterCreator = this.openCharacterCreator.bind(this);
         this.closeCharacterCreator = this.closeCharacterCreator.bind(this);
         this.openMainMenu = this.openMainMenu.bind(this);
         this.closeMainMenu = this.closeMainMenu.bind(this);
+        this.openSettings = this.openSettings.bind(this);
+        this.closeSettings = this.closeSettings.bind(this);
     }
     
     openCharacterCreator(){
         this.setState({
-            characterCreator: true
+            characterCreator: true,
         })
     }    
     closeCharacterCreator(){
@@ -48,6 +51,18 @@ class Container extends React.Component{
         })
     }
 
+    openSettings(){
+        this.setState({
+            settings: true
+        })
+    }
+
+    closeSettings(){
+        this.setState({
+            settings:false
+        })
+    }
+
     render(){
 
         return  <div id="container">
@@ -59,11 +74,15 @@ class Container extends React.Component{
                     {this.state.characterCreator ? null : <CharacterButton action={this.openCharacterCreator}/>}
                     {this.state.mainMenu ? null : <MainMenuButton action={this.openMainMenu}/>}
                     
+            {/* Main Menu:    */}
+                    {this.state.mainMenu ? <MainMenu openSettings={this.openSettings} openCharacterCreator={this.openCharacterCreator} closeMenu={this.closeMainMenu}/> : null}
+
             {/* Character Creator:    */}
                     {this.state.characterCreator ? <CharacterBuilder action={this.closeCharacterCreator}/> : null}
-                    
-            {/* Main Menu:    */}
-                    {this.state.mainMenu ? <MainMenu action={this.closeMainMenu}/> : null}
+            
+            
+            {/* Settings:    */}
+                    {this.state.settings ? <Settings close={this.closeSettings}/> : null}
 
 
                 </div>
