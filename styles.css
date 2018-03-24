@@ -18,17 +18,10 @@ body {
 }
 
 
-#app {
-    position:inherit;
-    height:100%;
-    width:100%;
-    padding:0;
-    margin:0;
-    overflow:hidden;
-    
-}
-
-#container {
+#app, 
+#container, 
+.MENU,
+#UI {
     position:inherit;
     height:100%;
     width:100%;

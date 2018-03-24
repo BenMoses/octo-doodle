@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import StoryModule from './src/story.js';
 
-class Game extends React.Component {
+module.exports = class Game extends React.Component {
     constructor(props){
         super(props);
         this.story = StoryModule; //props.story
@@ -77,14 +77,6 @@ class Game extends React.Component {
         }))
     }
 
-    homeButton(){
-        console.log('Home')
-    }
-
-    characterButton(){
-        console.log('Character')
-    }
-
     generateComments(){
         let comments = {left: {}, right: {}, monologue: {}};
         let current = this.state.currentStory;
@@ -121,19 +113,6 @@ class Game extends React.Component {
         return comments
     }
 
-    generateUI(){
-        let ui = {};
-
-        ui.home =   <div id="home">
-                    <i className="fa fa-home" onClick={this.homeButton}></i>
-                    </div>
-
-        ui.character =   <div id="character">
-                    <i className="fa fa-user" onClick={this.characterButton}></i>       
-                    </div>
-        return ui;
-    }
-
 
 //////Renderer
     render(){
@@ -164,7 +143,7 @@ class Game extends React.Component {
         if(current.monologue != '' && current.monologue != null && current.monologue != undefined){
             monologue = comments.monologue;
         }
-        let UI = this.generateUI();
+
         return  <div id="container">
                     <div id = 'game' onClick = {this.handleClick}
                         style= {this.backgroundStyle()}
@@ -173,14 +152,9 @@ class Game extends React.Component {
                     {right}
                     {leftComments}
                     {rightComments}
-                    {monologue}
-                    {UI.home}
-                    {UI.character}
+                    {monologue} 
                 </div>
         
     }
 }
 
-
-
-ReactDOM.render(<Game />,document.getElementById('app'))
