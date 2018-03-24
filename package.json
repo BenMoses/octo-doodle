@@ -4,7 +4,9 @@
   "description": "Creating a choices-esque app, using node and device wrapper e.g. Phonegap (or similar)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack-dev-server",
+    "build": "npx webpack"
   },
   "repository": {
     "type": "git",
